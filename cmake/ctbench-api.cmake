@@ -37,6 +37,7 @@ function(_ctbench_internal_add_compile_benchmark target_name output source
     target_compile_options(${target_name} PRIVATE
       --override-compiler=${_CTBENCH_OVERRIDE_COMPILER})
   endif()
+  add_dependencies(${target_name} ctbench-compiler-launcher)
 endfunction(_ctbench_internal_add_compile_benchmark)
 
 ## =============================================================================
