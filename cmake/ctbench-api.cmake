@@ -27,7 +27,7 @@ function(_ctbench_internal_add_compile_benchmark target_name output source
   # time-trace file retrieval and compiler overriding
   set_target_properties(
     ${target_name} PROPERTIES CXX_COMPILER_LAUNCHER
-                              "$<TARGET_FILE:ctbench::ctbench-compiler-launcher>;${output}")
+                              "$<TARGET_FILE:ctbench-compiler-launcher>;${output}")
 
   # Pass benchmark size
   target_compile_options(${target_name} PRIVATE ${options})
