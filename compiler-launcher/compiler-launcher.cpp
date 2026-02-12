@@ -55,7 +55,7 @@ inline int get_timetrace_file(std::filesystem::path const time_trace_file_dest,
   using exec_clock_t = ch::steady_clock;
 
   exec_clock_t::time_point const exec_t0 = exec_clock_t::now();
-  int const exit_code = boost::process::system(command_args);
+  int const exit_code = std::system(to_command_string(command_args).c_str());
   exec_clock_t::time_point const exec_t1 = exec_clock_t::now();
 
   // Check child exit code
