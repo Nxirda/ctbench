@@ -20,5 +20,15 @@ endif()
 add_subdirectory(compiler-launcher)
 add_subdirectory(grapher)
 
+export(TARGETS 
+    ctbench-compiler-launcher 
+    grapher 
+    ctbench-compile-opts 
+    NAMESPACE ctbench:: 
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/ctbench-targets.cmake"
+)
+
+include("${CMAKE_CURRENT_BINARY_DIR}/ctbench-targets.cmake")
+
 include(cmake/ctbench-api.cmake)
 include(cmake/install.cmake)
