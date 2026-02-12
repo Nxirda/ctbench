@@ -4,7 +4,6 @@ target_link_libraries(ctbench-compiler-launcher PRIVATE
   ctbench-compile-opts
   fmt::fmt
   nlohmann_json::nlohmann_json
-  Boost::boost
-  Boost::process)
+  Boost::boost)
 
 target_include_directories(ctbench-compiler-launcher PRIVATE include)
